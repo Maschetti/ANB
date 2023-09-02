@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evento</title>
+</head>
+<body>
+    <h1>Detalhes do Evento</h1>
+
+    <h2>{{ event.title }}</h2>
+    <p>Local: {{ event.place }}</p>
+    <p>Date e hora: {{ event.date_time }}</p>
+    <p>Quem criou: {{ event.user.username }}</p>
+
+    <a href="{% url 'site_anb:event_list_path' %}">Voltar</a>
+</body>
+</html>
