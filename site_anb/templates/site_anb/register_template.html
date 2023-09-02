@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+        <h1>Register</h1>
+    {%csrf_token %}
+    <input   class="form-control" placeholder="Apelido" required=""   autofocus="" type="text" name="username">
+    <input class="form-control" placeholder="E-mail" required="" type="email" name="email">
+    <input class="form-control" placeholder="Senha" required="" type="password" name="password">
+    <button type="submit" class="btn">Login</button>
+</form>
+<div class="text-center">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-danger" id="message_login">
+            <button type="button" class="close" data-dismiss="alert">
+                ×
+            </button>
+            <strong>{{message}}</strong>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+</body>
+</html>

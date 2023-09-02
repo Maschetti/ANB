@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tela de Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'site_anb/style.css' %}">
+</head>
+
+<body>
+<div class="wrapper">
+<form method="post">
+    <h1>Login</h1>
+    {%csrf_token %}
+    <div class="input-box">
+    <input   class="form-control" placeholder="Apelido" required=""   autofocus="" type="text" name="username">
+    <i class='bx bxs-user' ></i>
+    </div>
+    <div class="input-box">
+        <input class="form-control" placeholder="Senha" required="" type="password" name="password">
+        <i class='bx bxs-lock-alt' ></i>
+</div>
+        <div class="remember-forgot">
+            <label>
+                <input value="remember-me" type="checkbox"> Lembre-se de mim
+            </label>
+            <a   href="#">Esqueceu a senha?</a>
+        </div>
+    <button type="submit" class="btn">Login</button>
+    <div class="register">
+        <p>Não tem uma conta? <a href="{% url site_anb:register_path %}">Crie uma</a></p>
+    </div>
+</form>
+</div>
+<div class="text-center">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dismissible alert-danger" id="message_login">
+            <button type="button" class="close" data-dismiss="alert">
+                ×
+            </button>
+            <strong>{{message}}</strong>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+</body>
+</html>
