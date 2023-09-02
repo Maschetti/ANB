@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Cadastro</title>
 </head>
 <body>
 <form method="post">
-        <h1>Register</h1>
+        <h1>Cadastro</h1>
     {%csrf_token %}
-    <input   class="form-control" placeholder="Apelido" required=""   autofocus="" type="text" name="username">
-    <input class="form-control" placeholder="E-mail" required="" type="email" name="email">
-    <input class="form-control" placeholder="Senha" required="" type="password" name="password">
-    <button type="submit" class="btn">Login</button>
+    <input   class="form-control" placeholder="Apelido" required autofocus="" type="text" name="username">
+    <input class="form-control" placeholder="E-mail" required type="email" name="email">
+    <input class="form-control" placeholder="Senha" required type="password" name="password">
+    <button type="submit" class="btn">Cadastrar</button>
 </form>
 <div class="text-center">
     {% if messages %}

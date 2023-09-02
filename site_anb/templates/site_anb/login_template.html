@@ -14,11 +14,11 @@
     <h1>Login</h1>
     {%csrf_token %}
     <div class="input-box">
-    <input   class="form-control" placeholder="Apelido" required=""   autofocus="" type="text" name="username">
+    <input   class="form-control" placeholder="Apelido" required autofocus="" type="text" name="username">
     <i class='bx bxs-user' ></i>
     </div>
     <div class="input-box">
-        <input class="form-control" placeholder="Senha" required="" type="password" name="password">
+        <input class="form-control" placeholder="Senha" required type="password" name="password">
         <i class='bx bxs-lock-alt' ></i>
 </div>
         <div class="remember-forgot">
@@ -29,7 +29,7 @@
         </div>
     <button type="submit" class="btn">Login</button>
     <div class="register">
-        <p>Não tem uma conta? <a href="{% url site_anb:register_path %}">Crie uma</a></p>
+        <p>Não tem uma conta? <a href="{% url 'site_anb:register_path' %}">Crie uma</a></p>
     </div>
 </form>
 </div>
