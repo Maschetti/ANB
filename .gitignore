@@ -1,1 +1,8 @@
 # created by virtualenv automatically
+# Ignore virtual environments
+venv/
+env/
+*.pyc
+
+# Ignore IDE-specific files/directories (e.g., JetBrains PyCharm)
+
