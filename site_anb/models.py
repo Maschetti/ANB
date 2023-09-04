@@ -1,9 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-SANGUE_CHOICES = [
-    ()
-]
 # Create your models here.
 class Emergency_contact:
     name = models.CharField(max_length=100, verbose_name="Nome do contato de emergência")
