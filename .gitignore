@@ -5,4 +5,4 @@ env/
 *.pyc
 
 # Ignore IDE-specific files/directories (e.g., JetBrains PyCharm)
-.idea/
+
