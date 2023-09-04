@@ -11,6 +11,12 @@ from .models import Event
 def index(request):
     return HttpResponse("Bem Vindo ao site da Água na Boca!")
 
+def medical_survey(request):
+    return render(request, 'site-anb:medical_survey')
+
+
+
+
 def register_view(request):
     if request.method == 'POST':
         username = request.POST['username']

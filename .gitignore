@@ -3,6 +3,7 @@
 __pycache__/
 db.sqlite3
 .env
+.idea/
 
 # Arquivos de configuração do ambiente virtual
 venv/
