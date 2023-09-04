@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Evento Novo</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
 <form method="post">
     <h1>Adicione um evento</h1>
 {%csrf_token %}
@@ -13,5 +9,4 @@
     <input   class="form-control" required type="datetime-local" name="date_time">
     <button type="submit" class="btn">Adicionar</button>
 </form>
-</body>
-</html>
+{% endblock %}

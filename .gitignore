@@ -1,1 +1,37 @@
-# created by virtualenv automatically
+# Arquivos de configuração do sistema
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+
+# Arquivos de configuração do ambiente virtual
+venv/
+env/
+*.venv/
+.venv/
+
+# Dependências geradas pelo pip
+# Exclua este se você deseja controlar suas dependências com o Pipfile.lock
+Pipfile.lock
+
+# Arquivos de mídia
+media/
+
+# Arquivos estáticos compilados
+staticfiles/
+
+# Logs e arquivos temporários
+*.log
+*.swp
+*~
+
+# Diretórios de arquivos locais
+__MACOSX/
+.DS_Store
+
+# Cache de pytest
+.cache/
+
+# Diretório de instalação de JavaScript (node_modules) - Use isso se você não estiver usando npm/yarn
+# node_modules/
+

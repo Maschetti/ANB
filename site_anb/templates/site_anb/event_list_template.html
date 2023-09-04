@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Eventos</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
 <h1>Lista de Eventos</h1>
     {% for event in event_list %}
         <div class="event-card">
@@ -17,5 +13,4 @@
         </div>
     {% endfor %}
 <a href="{% url 'site_anb:new_event_path' %}">Crie Evento</a>
-</body>
-</html>
+{% endblock %}
