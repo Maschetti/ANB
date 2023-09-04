@@ -11,12 +11,6 @@ from .models import Event
 def index(request):
     return HttpResponse("Bem Vindo ao site da Água na Boca!")
 
-def medical_survey(request):
-    return render(request, 'site-anb:medical_survey')
-
-
-
-
 def register_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -32,7 +26,8 @@ def register_view(request):
             messages.error(request, 'Não foi possível cadastrar o usuário.')
     return  render(request, 'site_anb/register_template.html')
 
-
+def medical_survey_view(request):
+    return render(request, 'site_anb/medical_survey_template.html')
 
 def login_view(request):
     if request.method == 'POST':
