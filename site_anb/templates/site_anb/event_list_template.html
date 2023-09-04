@@ -8,7 +8,7 @@
                 <form method="post" action="{% url 'site_anb:remove_event_path' event.id %}" style="display: inline;">
                     {{ event.date_time }}
                     {% csrf_token %}
-                    <button type="submit">Remove</button>
+                    <button type="submit">X</button>
                 </form>
         </div>
     {% endfor %}
