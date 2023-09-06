@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<h1>Lista de Tentos</h1>
+    {% for tento in tento_list %}
+        <div class="tento-card">
+            <h2>{{ event.title }}</h2>
+            <p>{{ tento.description }}</p>
+            <p>DE: {{ tento.from_user }}</p>
+            <p>PARA: {{ tento.to_user }}</p>
+            <p>{{ tento.date_time }}</p>
+        </div>
+    {% endfor %}
+<a href="{% url 'site_anb:new_tento_path' %}">Crie Tento</a>
+{% endblock %}

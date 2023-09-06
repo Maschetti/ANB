@@ -4,10 +4,10 @@
 <form method="post">
     <a href="{% url 'site_anb:event_list_path' %}">Voltar</a>
     <h1>Adicione um evento</h1>
-{%csrf_token %}
-    <input   class="form-control" placeholder="Título de evento" required autofocus type="text" name="title">
-    <input   class="form-control" placeholder="Lugar" required type="text" name="place">
-    <input   class="form-control" required type="datetime-local" name="date_time">
+    {% csrf_token %}
+    <input class="form-control" placeholder="Título de evento" required autofocus type="text" name="title">
+    <input class="form-control" placeholder="Lugar" required type="text" name="place">
+    <input class="form-control" required type="datetime-local" name="date_time">
     <button type="submit" class="btn">Adicionar</button>
 </form>
 {% endblock %}

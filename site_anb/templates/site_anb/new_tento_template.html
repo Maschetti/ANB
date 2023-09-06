@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<form method="post">
+    <a href="{% url 'site_anb:tento_list_path' %}">Voltar</a>
+    <h1>Adicione um tento</h1>
+    {% csrf_token %}
+    <input class="form-control" placeholder="Descrição" required autofocus type="text" name="description">
+    <label for="nickname">Selecione a CANALHA:</label>
+    <select name="nickname">
+            {% for user_profile in user_profile_list %}
+                <option value="{{ user_profile.nickname }}">{{ user_profile.nickname }}</option>
+            {% endfor %}
+    </select>
+    <button type="submit" class="btn">Adicionar</button>
+</form>
+{% endblock %}

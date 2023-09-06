@@ -33,7 +33,7 @@ class Tento(models.Model):
     from_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, blank=True, null=True, related_name='giver')
     to_user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, blank=True, null=True, related_name='receiver')
     description = models.CharField(max_length=200)
-    date_time = models.DateTimeField()
+    date_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.description
@@ -53,31 +53,32 @@ class Address(models.Model):
 
     def __str__(self):
         return self.street
-#
-# BLOOD_TYPE_CHOICES = [
-#     ('A+', 'A+'),
-#     ('A-', 'A-'),
-#     ('B+', 'B+'),
-#     ('B-', 'B-'),
-#     ('AB+', 'AB+'),
-#     ('AB-', 'AB-'),
-#     ('O+', 'O+'),
-#     ('O-', 'O-'),
-# ]
-#
-# class MedicalPDF(models.Model):
-#     full_name = models.CharField(max_length=100, verbose_name="nome completo")
-#     birthday = models.DateField(verbose_name="Data de Aniversário")
-#     cpf = models.CharField(max_length=12, verbose_name="CPF")
-#     address = models.ForeignKey(Address, on_delete=models.CASCADE)
-#     cellphone_number = models.CharField(max_length=30, verbose_name="Celular")
-#     emergency_contact = models.ForeignKey(EmergencyContact, on_delete=models.CASCADE)
-#     blood_type = models.CharField(max_length=3, choices=BLOOD_TYPE_CHOICES)
-#     regular_medicines = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
-#     past_medicines = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
-#     broken_bones = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
-#     allergies = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
-#     info = models.TextField(blank=True, null=True)
-#
-#     def __str__(self):
-#         return  self.full_name
+
+BLOOD_TYPE_CHOICES = [
+    ('A+', 'A+'),
+    ('A-', 'A-'),
+    ('B+', 'B+'),
+    ('B-', 'B-'),
+    ('AB+', 'AB+'),
+    ('AB-', 'AB-'),
+    ('O+', 'O+'),
+    ('O-', 'O-'),
+]
+
+class MedicalPDF(models.Model):
+    full_name = models.CharField(max_length=100)
+    birthday = models.DateField()
+    cpf = models.CharField(max_length=12)
+    address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    cellphone_number = models.CharField(max_length=30)
+    emergency_contact = models.ForeignKey(EmergencyContact, on_delete=models.CASCADE)
+    blood_type = models.CharField(max_length=3, choices=BLOOD_TYPE_CHOICES)
+    regular_medicines = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
+    past_medicines = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
+    broken_bones = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
+    allergies = models.CharField(max_length=100, blank=True, null=True, default='Nenhum')
+    diseases = models.CharField(max_length=200, blank=True, null=True, default='Nenhum')
+    info = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return  self.full_name
